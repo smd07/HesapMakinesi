@@ -130,6 +130,7 @@ namespace HesapMakinesi
 
         private void buttonMod_Click(object sender, EventArgs e)
         {
+         label1.Text = label1.Text + "%";
              if (sayi1 == 0)
             {
                 sayi1 = int.Parse(textBox1.Text);
@@ -173,6 +174,7 @@ namespace HesapMakinesi
 
         private void buttonMinus_Click(object sender, EventArgs e)
         {
+         label1.Text = label1.Text + "-";
         if (sayi1 == 0)
             {
                 sayi1 = int.Parse(textBox1.Text);
