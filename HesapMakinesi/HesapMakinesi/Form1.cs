@@ -16,16 +16,93 @@ namespace HesapMakinesi
         {
             InitializeComponent();
         }
-
         
+        int toplam;
+        int sayi1;
+        int sayi2;
+        string isaret;
+        
+        public void isrt(int sayi1,int sayi2)
+        {
+            if (isaret.Equals("-"))
+            {
+                cıkar(sayi1, sayi2);
+            }
+            else if (isaret.Equals("+"))
+            {
+                topla(sayi1, sayi2);
+            }
+            else if (isaret.Equals("/"))
+            {
+                böl(sayi1, sayi2);
+            }
+            else if (isaret.Equals("X"))
+            {
+                carp(sayi1, sayi2);
+            }
+            else
+            {
+                modal(sayi1, sayi2);
+            }
+
+        }
+        
+        
+
+        public void böl(int sayi1, int sayi2)
+        {
+            toplam = sayi1 / sayi2;
+            textBox1.Text = toplam.ToString();
+            this.sayi1 = toplam;
+        }
+        public void cıkar(int sayi1,int sayi2)
+        {
+            toplam= sayi1 - sayi2;
+            textBox1.Text = toplam.ToString();
+            this.sayi1 = toplam;
+
+        }
+        public void modal(int sayi1, int sayi2)
+        {
+            toplam = sayi1 % sayi2;
+            textBox1.Text = toplam.ToString();
+            this.sayi1 = toplam;
+
+        }
 
         private void buttonDivide_Click(object sender, EventArgs e)
         {
-
+            if (sayi1 == 0)
+            {
+                sayi1 = int.Parse(textBox1.Text);
+                textBox1.Text = "";
+                isaret = "/";
+            }
+            else
+            {
+                sayi2 = int.Parse(textBox1.Text);
+                textBox1.Text = "";
+                isrt(sayi1, sayi2);
+                isaret = "/";
+            }
         }
 
         private void buttonMod_Click(object sender, EventArgs e)
         {
+             if (sayi1 == 0)
+            {
+                sayi1 = int.Parse(textBox1.Text);
+                textBox1.Text = "";
+                isaret = "%";
+                toplam = sayi1;
+            }
+            else
+            {
+                sayi2 = int.Parse(textBox1.Text);
+                textBox1.Text = "";
+                isrt(sayi1, sayi2);
+                isaret = "%";
+            }
 
         }
 
@@ -41,16 +118,33 @@ namespace HesapMakinesi
 
         private void buttonC_Click(object sender, EventArgs e)
         {
-
+            textBox1.Text = "0";
+            sayi1 = 0;
+            sayi2 = 0;
+            isaret = "";
         }
 
         private void buttonMinus_Click(object sender, EventArgs e)
         {
+        if (sayi1 == 0)
+            {
+                sayi1 = int.Parse(textBox1.Text);
+                textBox1.Text = "";
+                isaret = "-";
+            }
+            else
+            {
+                sayi2 = int.Parse(textBox1.Text);
+                textBox1.Text = "";
+                isrt(sayi1, sayi2);
+                isaret = "-";
+            }
 
         }
 
         private void buttonPlus_Click(object sender, EventArgs e)
         {
+        
 
         }
 
