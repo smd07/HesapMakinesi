@@ -112,7 +112,7 @@ namespace HesapMakinesi
 
         private void buttonDivide_Click(object sender, EventArgs e)
         {
-          label1.Text = label1.Text + "*";
+          label1.Text = label1.Text + "/";
             if (sayi1 == 0)
             {
                 sayi1 = int.Parse(textBox1.Text);
