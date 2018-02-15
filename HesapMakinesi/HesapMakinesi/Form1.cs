@@ -17,6 +17,62 @@ namespace HesapMakinesi
             InitializeComponent();
         }
         
+        
+        
+        
+        
+        
+        
+         double sonuc;
+        double sayi1;
+        double sayi2;
+        string x;
+        public void Sonuc()
+        {
+            if (x.Equals( "+"))
+            {
+               sonuc= sayi1 + sayi2;
+                textBox1.Text = sonuc.ToString();
+            }
+            else if (x=="-")
+            {
+                sonuc = sayi1 - sayi2;
+                textBox1.Text = sonuc.ToString();
+
+            }
+            else if (x=="/")
+            {
+                sonuc = sayi1 / sayi2;
+                textBox1.Text = sonuc.ToString();
+            }
+            else if (x=="*")
+            {
+                sonuc = sayi1 * sayi2;
+                textBox1.Text = sonuc.ToString();
+            }
+            else if(x=="%")
+            {
+                sonuc = sayi1 % sayi2;
+                textBox1.Text = sonuc.ToString();
+            }
+           
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         int toplam;
         int sayi1;
         int sayi2;
@@ -113,6 +169,12 @@ namespace HesapMakinesi
 
         private void buttonDEL_Click(object sender, EventArgs e)
         {
+        
+        if (textBox1.Text.Length == 1)
+                textBox1.Text = "0";
+            else
+                textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
+                label1.Text = label1.Text.Substring(0, label1.Text.Length - 1);
 
         }
 
@@ -144,13 +206,65 @@ namespace HesapMakinesi
 
         private void buttonPlus_Click(object sender, EventArgs e)
         {
-        
+              label1.Text =label1.Text + "+";
+            if (sayi1==0)
+            {
+                sayi1 = Convert.ToDouble(textBox1.Text);
+                x = "+";
+                textBox1.Text = "";
+            }
+            else 
+            {
+                sayi2 = Convert.ToDouble(textBox1.Text);
+                Sonuc();
+                sayi1 = sonuc;
+                label1.Text =sayi1.ToString()+"+";
+                x = "+";
+            }
 
         }
 
         private void buttonEqual_Click(object sender, EventArgs e)
         {
+         if (sayi1 == 0)
+            {
+                sayi1 = Convert.ToDouble(textBox1.Text);
+             
+                textBox1.Text = "";
+            }
+            else 
+            {
+                sayi2 = Convert.ToDouble(textBox1.Text);
+                Sonuc();
+                label1.Text += "=" + sonuc;
+                sayi1 = sonuc;
+               
+            }
+            sayi1 = 0;
+            sayi2 = 0;
+            x = "";
+            label1.Text = "";
 
+        }
+        
+         private void buttonCross_Click(object sender, EventArgs e)
+        {
+            label1.Text = label1.Text + "*";
+            if (sayi1 == 0)
+            {
+                sayi1 = Convert.ToDouble(textBox1.Text);
+                x = "*";
+                textBox1.Text = "";
+            }
+            else
+            {
+                sayi2 = Convert.ToDouble(textBox1.Text);
+                Sonuc();
+               
+                sayi1 = sonuc;
+                label1.Text = sayi1.ToString() + "*";
+                x = "*";
+            }
         }
 
         private void buttonPoint_Click(object sender, EventArgs e)
