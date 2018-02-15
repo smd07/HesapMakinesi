@@ -17,9 +17,11 @@ namespace HesapMakinesi
             InitializeComponent();
         }
         
-        
-        
-        int sonuc;
+     
+        double sayi1;
+        double sayi2;
+        double sonuc;
+        string isaret;
         public void Sonuc()
         {
             if (isaret.Equals("+"))
@@ -48,71 +50,20 @@ namespace HesapMakinesi
                 sonuc = sayi1 % sayi2;
                 textBox1.Text = sonuc.ToString();
             }
-           
+             else if (isaret.Equals("1/"))
+            {
+                sonuc = 1 / sayi1;
+                textBox1.Text = sonuc.ToString();
+            }
         }
         
-        
-        
-        
-        
-        
-        
-        
-        int sayi1;
-        int sayi2;
-        string isaret;
-        
-        public void isrt(int sayi1,int sayi2)
-        {
-            if (isaret.Equals("-"))
-            {
-                cıkar(sayi1, sayi2);
-            }
-            else if (isaret.Equals("+"))
-            {
-                //topla(sayi1, sayi2);
-            }
-            else if (isaret.Equals("/"))
-            {
-                böl(sayi1, sayi2);
-            }
-            else if (isaret.Equals("X"))
-            {
-               // carp(sayi1, sayi2);
-            }
-            else
-            {
-                modal(sayi1, sayi2);
-            }
-
-        }
-        
+       
         
 
-        public void böl(int sayi1, int sayi2)
-        {
-            sonuc = sayi1 / sayi2;
-            textBox1.Text = sonuc.ToString();
-            this.sayi1 = sonuc;
-        }
-        public void cıkar(int sayi1,int sayi2)
-        {
-            sonuc = sayi1 - sayi2;
-            textBox1.Text = sonuc.ToString();
-            this.sayi1 = sonuc;
-
-        }
-        public void modal(int sayi1, int sayi2)
-        {
-            sonuc = sayi1 % sayi2;
-            textBox1.Text = sonuc.ToString();
-            this.sayi1 = sonuc;
-
-        }
-
+        
         private void buttonDivide_Click(object sender, EventArgs e)
         {
-          label1.Text = label1.Text + "*";
+          label1.Text = label1.Text + "/";
             if (sayi1 == 0)
             {
                 sayi1 = int.Parse(textBox1.Text);
@@ -121,9 +72,11 @@ namespace HesapMakinesi
             }
             else
             {
-                sayi2 = int.Parse(textBox1.Text);
-                textBox1.Text = "";
-                isrt(sayi1, sayi2);
+               sayi2 = int.Parse(textBox1.Text);
+                Sonuc();
+
+                sayi1 = sonuc;
+                label1.Text = sayi1.ToString() + "/";
                 isaret = "/";
             }
         }
@@ -142,7 +95,7 @@ namespace HesapMakinesi
             {
                 sayi2 = int.Parse(textBox1.Text);
                 textBox1.Text = "";
-                isrt(sayi1, sayi2);
+               Sonuc();
                 isaret = "%";
             }
 
@@ -163,9 +116,10 @@ namespace HesapMakinesi
             }
               
             else
+            {
                 textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
                 label1.Text = label1.Text.Substring(0, label1.Text.Length - 1);
-
+             }
         }
 
         private void buttonC_Click(object sender, EventArgs e)
@@ -189,7 +143,7 @@ namespace HesapMakinesi
             {
                 sayi2 = int.Parse(textBox1.Text);
                 textBox1.Text = "";
-                isrt(sayi1, sayi2);
+                  Sonuc();
                 isaret = "-";
             }
 
@@ -217,6 +171,13 @@ namespace HesapMakinesi
 
         private void buttonEqual_Click(object sender, EventArgs e)
         {
+        
+         if (isaret.Equals("1/"))
+            {
+                label1.Text = "";
+            }
+            else
+            {
          if (sayi1 == 0)
             {
                 sayi1 = int.Parse(textBox1.Text);
@@ -237,12 +198,18 @@ namespace HesapMakinesi
             label1.Text = "";
 
         }
-        
+        }
        
 
         private void buttonPoint_Click(object sender, EventArgs e)
         {
-
+               sayi1 = Convert.ToDouble(textBox1.Text);
+                textBox1.Text = "1/"+textBox1.Text;
+                isaret = "1/";
+            Sonuc();
+            sayi1 = sonuc;
+            label1.Text = sonuc.ToString();
+            textBox1.Text = sonuc.ToString();
         }
 
         private void button0_Click(object sender, EventArgs e)
