@@ -156,8 +156,12 @@ namespace HesapMakinesi
         private void buttonDEL_Click(object sender, EventArgs e)
         {
         
-        if (textBox1.Text.Length == 1)
-                textBox1.Text = "0";
+        if (textBox1.Text.Length == 0 && label1.Text.ToString().Length>=1)
+            {
+                label1.Text = label1.Text.Substring(0, label1.Text.Length - 1);
+                sayi1 = 0;
+            }
+              
             else
                 textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
                 label1.Text = label1.Text.Substring(0, label1.Text.Length - 1);
