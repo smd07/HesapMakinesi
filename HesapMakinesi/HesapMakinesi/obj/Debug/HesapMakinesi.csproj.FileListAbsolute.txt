@@ -1,0 +1,10 @@
+c:\users\samed\documents\visual studio 2013\Projects\HesapMakinesi\HesapMakinesi\bin\Debug\HesapMakinesi.exe.config
+C:\Users\samed\Desktop\HesapMakinesi\HesapMakinesi\HesapMakinesi\HesapMakinesi\bin\Debug\HesapMakinesi.exe.config
+C:\Users\samed\Desktop\HesapMakinesi\HesapMakinesi\HesapMakinesi\HesapMakinesi\bin\Debug\HesapMakinesi.exe
+C:\Users\samed\Desktop\HesapMakinesi\HesapMakinesi\HesapMakinesi\HesapMakinesi\bin\Debug\HesapMakinesi.pdb
+C:\Users\samed\Desktop\HesapMakinesi\HesapMakinesi\HesapMakinesi\HesapMakinesi\obj\Debug\HesapMakinesi.csprojResolveAssemblyReference.cache
+C:\Users\samed\Desktop\HesapMakinesi\HesapMakinesi\HesapMakinesi\HesapMakinesi\obj\Debug\HesapMakinesi.Form1.resources
+C:\Users\samed\Desktop\HesapMakinesi\HesapMakinesi\HesapMakinesi\HesapMakinesi\obj\Debug\HesapMakinesi.Properties.Resources.resources
+C:\Users\samed\Desktop\HesapMakinesi\HesapMakinesi\HesapMakinesi\HesapMakinesi\obj\Debug\HesapMakinesi.csproj.GenerateResource.Cache
+C:\Users\samed\Desktop\HesapMakinesi\HesapMakinesi\HesapMakinesi\HesapMakinesi\obj\Debug\HesapMakinesi.exe
+C:\Users\samed\Desktop\HesapMakinesi\HesapMakinesi\HesapMakinesi\HesapMakinesi\obj\Debug\HesapMakinesi.pdb
