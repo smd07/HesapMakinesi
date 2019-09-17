@@ -15,6 +15,7 @@ namespace HesapMakinesi
         public Form1()
         {
             InitializeComponent();
+            buttonPoint.Text = "x²";
         }
         
         
@@ -242,6 +243,31 @@ namespace HesapMakinesi
 
         private void buttonPoint_Click(object sender, EventArgs e)
         {
+             if(isaret!="")
+            {
+                sayi2=int.Parse(textBox1.Text.ToString());
+                Sonuc();
+                sayi1 = sonuc;
+
+            }
+
+            if(sayi1==0){
+                sayi1=int.Parse(textBox1.Text.ToString());
+                sonuc = sayi1 * sayi1;
+                sayi1 = sonuc;
+                textBox1.Text = sonuc.ToString();
+
+            }
+            else
+            {
+                sonuc = sayi1 * sayi1;
+                sayi1 = sonuc;
+                textBox1.Text = sonuc.ToString();
+
+            }
+            isaret = "";
+            sayi1 = 0;
+            sayi2 = 0;
 
         }
 
